@@ -36,7 +36,7 @@ fn build_libbacktrace(_target: &str) -> Result<(), ()> {
     let sdk_include = format!("{}/{}", sdk_dir, "include");
 
     let native = native_lib_boilerplate(
-        "sgx_backtrace_sys/libbacktrace",
+        "libbacktrace",
         "libbacktrace",
         "backtrace",
         "",

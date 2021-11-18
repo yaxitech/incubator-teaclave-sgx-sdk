@@ -42,7 +42,7 @@ fn build_libunwind(host: &str, target: &str) -> Result<(), ()> {
         "INSTALL",
     ];
     let native = native_lib_boilerplate(
-        "sgx_unwind/libunwind",
+        "libunwind",
         "libunwind",
         "unwind",
         "src/.libs",
@@ -75,6 +75,11 @@ fn build_libunwind(host: &str, target: &str) -> Result<(), ()> {
         }
         _ => {}
     }
+
+    run(Command::new("cp")
+                .arg("-r")
+                .arg(native.src_dir.to_str().unwrap())
+                .arg(native.out_dir.to_str().unwrap()));
 
     run(Command::new("sh")
         .current_dir(&native.out_dir)

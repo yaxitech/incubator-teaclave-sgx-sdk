@@ -277,7 +277,7 @@ pub fn native_lib_boilerplate(
     filter: &[&str],
 ) -> Result<NativeLibBoilerplate, ()> {
     let current_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
-    let src_dir = current_dir.join("..").join(src_name);
+    let src_dir = current_dir.join(src_name);
     rerun_if_changed_anything_in_dir(&src_dir, filter);
 
     let out_dir =
