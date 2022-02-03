@@ -38,6 +38,11 @@ pub use self::poison::{LockResult, PoisonError, TryLockError, TryLockResult};
 pub use self::rwlock::{SgxRwLock, SgxRwLockReadGuard, SgxRwLockWriteGuard, SgxThreadRwLock};
 pub use self::spinlock::{SgxSpinlock, SgxSpinlockGuard, SgxThreadSpinlock};
 
+pub use {
+    SgxCondvar as Condvar, SgxMutex as Mutex, SgxMutexGuard as MutexGuard, SgxRwLock as RwLock,
+    SgxRwLockReadGuard as RwLockReadGuard,
+};
+
 #[cfg(feature = "thread")]
 pub mod mpsc;
 

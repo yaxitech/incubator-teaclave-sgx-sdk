@@ -9,7 +9,7 @@ description = "Rust SGX SDK provides the ability to write Intel SGX applications
 edition = "2018"
 
 [lib]
-name = "sgx_tstd"
+name = "std"
 crate-type = ["rlib"]
 
 [features]
@@ -31,6 +31,7 @@ sgx_tprotected_fs = { path = "../sgx_tprotected_fs" }
 sgx_backtrace_sys = { path = "../sgx_backtrace_sys" }
 sgx_demangle = { path = "../sgx_demangle" }
 sgx_unwind = { path = "../sgx_unwind" }
+panic_unwind = { path = "../sgx_panic_unwind" }
 
 [dependencies.hashbrown]
 package = "hashbrown_tstd"
