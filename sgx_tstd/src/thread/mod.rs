@@ -173,6 +173,10 @@ impl Builder {
         self
     }
 
+    pub fn stack_size(self, _size: usize) -> Builder {
+        self
+    }
+
     /// Spawns a new thread by taking ownership of the `Builder`, and returns an
     /// [`io::Result`] to its [`JoinHandle`].
     ///
@@ -878,6 +882,8 @@ struct Inner {
 pub struct SgxThread {
     inner: Arc<Inner>,
 }
+
+pub use SgxThread as Thread;
 
 impl SgxThread {
     // Used only internally to construct a thread object without spawning
